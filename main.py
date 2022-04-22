@@ -10,9 +10,9 @@ while len(domains) != 5:
     try:
         domain = re.search(regex, email)
         email = Email(domain.group())
+        domain_check = email.get_domain()
+        print(domain_check)
+        domains.append(domain_check)
     except AttributeError:
         print("Invalid email address.")
-    domain_check = email.get_domain()
-    print(domain_check)
-    domains.append(domain_check)
 print(' '.join(domains))
